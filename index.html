@@ -234,37 +234,37 @@
         //     makeXYZGUI(gui, light.target.position, 'target', updateLight);
         // }
 
-        /*
-            RECTAREA LIGHT
-        */
-        {
-            const color = 0xFFFFFF;
-            const intensity = 5;
-            const width = 12;
-            const height = 4;
-            const light = new THREE.RectAreaLight(color, intensity, width, height);
-            light.position.set(0, 10, 0);
-            light.rotation.x = THREE.MathUtils.degToRad(-90);
-            scene.add(light);
+        // /*
+        //     RECTAREA LIGHT
+        // */
+        // {
+        //     const color = 0xFFFFFF;
+        //     const intensity = 5;
+        //     const width = 12;
+        //     const height = 4;
+        //     const light = new THREE.RectAreaLight(color, intensity, width, height);
+        //     light.position.set(0, 10, 0);
+        //     light.rotation.x = THREE.MathUtils.degToRad(-90);
+        //     scene.add(light);
 
-            const helper = new RectAreaLightHelper(light);
-            light.add(helper);
+        //     const helper = new RectAreaLightHelper(light);
+        //     light.add(helper);
 
-            function updateLight() {
-                helper.update();
-            }
+        //     function updateLight() {
+        //         helper.update();
+        //     }
 
-            const gui = new GUI();
-            gui.addColor(new ColorGUIHelper(light, 'color'), 'value').name('color');
-            gui.add(light, 'intensity', 0, 10, 0.01);
-            gui.add(light, 'width', 0, 20).onChange(updateLight);
-            gui.add(light, 'height', 0, 20).onChange(updateLight);
-            gui.add(new DegRadHelper(light.rotation, 'x'), 'value', -180, 180).name('x rotation').onChange(updateLight);
-            gui.add(new DegRadHelper(light.rotation, 'y'), 'value', -180, 180).name('y rotation').onChange(updateLight);
-            gui.add(new DegRadHelper(light.rotation, 'z'), 'value', -180, 180).name('z rotation').onChange(updateLight);
+        //     const gui = new GUI();
+        //     gui.addColor(new ColorGUIHelper(light, 'color'), 'value').name('color');
+        //     gui.add(light, 'intensity', 0, 10, 0.01);
+        //     gui.add(light, 'width', 0, 20).onChange(updateLight);
+        //     gui.add(light, 'height', 0, 20).onChange(updateLight);
+        //     gui.add(new DegRadHelper(light.rotation, 'x'), 'value', -180, 180).name('x rotation').onChange(updateLight);
+        //     gui.add(new DegRadHelper(light.rotation, 'y'), 'value', -180, 180).name('y rotation').onChange(updateLight);
+        //     gui.add(new DegRadHelper(light.rotation, 'z'), 'value', -180, 180).name('z rotation').onChange(updateLight);
 
-            makeXYZGUI(gui, light.position, 'position', updateLight);
-        }
+        //     makeXYZGUI(gui, light.position, 'position', updateLight);
+        // }
 
         function resizeRendererToDisplaySize(renderer) {
             const canvas = renderer.domElement;
